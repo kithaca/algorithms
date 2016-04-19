@@ -1,7 +1,7 @@
 // Determine if a string has all unique characters.
 
 var isUnique = function (string) {
-	h = {};
+	var h = {};
 
 	for (var i = 0; i < string.length; i++) {
 		if (h[string[i]]) {
