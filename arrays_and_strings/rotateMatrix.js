@@ -5,19 +5,31 @@ Can you do this in place?
 */
 
 var rotateMatrix = function (matrix) {
-	for (var row = 0; row < matrix.length; row++) {
-		for (var col = 0; col < Things.length; col++) {
+	var n = matrix.length;
+
+	var rotated = [];
+	for (var i = 0; i < n; i++) {
+		rotated.push(new Array(n));
+	}
+
+	for (var row = 0; row < n; row++) {
+		for (var col = 0; col < n; col++) {
 			var temp = matrix[row][col];
-			matrix[]
+			rotated[row][col] = matrix[col][n - row - 1];
 		}
 	}
+	return rotated;
 };
-
-
-
 
 var matrix = [
 							[1, 2, 3],
 							[4, 5, 6],
 							[7, 8, 9]
 						 ];
+
+console.log(rotateMatrix(matrix));
+
+/* [3, 6, 9]
+	 [2, 5, 8]
+	 [1, 4, 7]
+*/
