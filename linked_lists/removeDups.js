@@ -14,7 +14,6 @@ var removeDups = function (list) {
 		}
 		currNode = currNode.next;
 	}
-	console.log(values);
 	return list;
 };
 

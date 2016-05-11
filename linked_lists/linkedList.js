@@ -12,12 +12,15 @@ var LinkedList = function (array) {
 };
 
 LinkedList.prototype.insert = function (prev, value) {
-	var prev = prev;
-	var next = prev.next ? prev.next : null;
-	var newNode = new Node(value, prev, next);
-	if (prev === null) {
+	var newNode = new Node(value);
+	if (!prev) {
 		this.head = newNode;
+	} else {
+		prev.next = newNode;
 	}
+	newNode.prev = prev;
+	newNode.next = prev.next ? prev.next : null;
+	prev.next = newNode;
 };
 
 LinkedList.prototype.add = function (node, tail) {
