@@ -29,6 +29,17 @@ SinglyLinkedList.prototype.add = function (node, tail) {
 	tail.next = node;
 };
 
+SinglyLinkedList.prototype.find = function (value) {
+	var currNode = this.head;
+	while (currNode !== null) {
+		if (currNode.value === value) {
+			return currNode;
+		}
+		currNode = currNode.next;
+	}
+	return null;
+};
+
 SinglyLinkedList.prototype.delete = function (node, prev) {
 	if (prev) {
 		prev.next = node.next;
@@ -44,7 +55,7 @@ SinglyLinkedList.prototype.toString = function () {
 		listArray.push(currNode.value);
 		currNode = currNode.next;
 	}
-	return {head: this.head.value, list: listArray};
+	return listArray;
 }
 
 module.exports = SinglyLinkedList;

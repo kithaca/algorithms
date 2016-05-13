@@ -21,7 +21,6 @@ var kthToLast = function (list, k) {
 };
 
 var list = new SinglyLinkedList([1, 2, 2, 7, 4]);
-// console.log(list.toString());
 
 console.log(kthToLast(list, 1));
 console.log(kthToLast(list, 3));
