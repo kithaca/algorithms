@@ -9,3 +9,24 @@ Input: 	3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 (partition = 5)
 Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
 */
 
+var SinglyLinkedList = require('./singlyLinkedList');
+
+var partition = function (list, value) {
+	var currNode = list.head;
+	var prev = null;
+	while (currNode) {
+		var next = currNode.next;
+		if (currNode.value < value && currNode !== list.head) {
+			prev.next = next;
+			currNode.next = list.head;
+			list.head = currNode;
+		} else {
+			prev = currNode;
+		}
+		currNode = next;
+	}
+	return list.toString();
+};
+
+var list = new SinglyLinkedList([3, 5, 8, 5, 10, 2, 1]);
+console.log(partition(list, 5));
