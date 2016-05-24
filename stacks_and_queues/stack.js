@@ -14,6 +14,8 @@ Stack.prototype.pop = function () {
 	} else {
 		if (this.data.length === 1) {
 			this.top = null;
+		} else {
+			this.top = this.data[this.data.length - 2];
 		}
 		return this.data.pop();
 	}
