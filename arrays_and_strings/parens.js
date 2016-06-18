@@ -22,5 +22,3 @@ var parens = function (n) {
 console.log(parens(1));
 console.log(parens(2));
 console.log(parens(3));
-
-
