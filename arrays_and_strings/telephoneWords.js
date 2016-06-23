@@ -30,4 +30,4 @@ function letters (num) {
 	return h[num];
 }
 
-console.log(telWords([8, 7, 3, 3, 1]));
+console.log(telWords([8, 7, 3, 0, 3, 1]));
